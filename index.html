@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreshTrace | Smart Supermarket Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#" data-page="Dashboard"><span class="brand-icon">🛒</span><span>Fresh<span>Trace</span><small>SMART SUPERMARKET</small></span></a>
+    <div class="store-chip"><span class="live-dot"></span><span><b>My Supermarket</b><small>Store is active</small></span><span class="chevron">⌄</span></div>
+    <nav id="navigation">
+      <p class="nav-label">WORKSPACE</p>
+      <a class="nav-link active" href="#" data-page="Dashboard"><span>▦</span> Dashboard</a>
+      <a class="nav-link" href="#" data-page="POS Billing"><span>▣</span> POS Billing <kbd>F2</kbd></a>
+      <a class="nav-link" href="#" data-page="Products"><span>▤</span> Products</a>
+      <a class="nav-link" href="#" data-page="Inventory / Stock"><span>▥</span> Inventory / Stock</a>
+      <a class="nav-link" href="#" data-page="Purchases"><span>⇩</span> Purchases</a>
+      <a class="nav-link" href="#" data-page="Suppliers"><span>♧</span> Suppliers</a>
+      <p class="nav-label">INTELLIGENCE</p>
+      <a class="nav-link" href="#" data-page="Expiry Alerts"><span>◷</span> Expiry Alerts <i class="nav-count">4</i></a>
+      <a class="nav-link" href="#" data-page="Sales Reports"><span>▥</span> Sales Reports</a>
+      <a class="nav-link" href="#" data-page="Purchase Suggestions"><span>✧</span> Purchase Suggestions <i class="nav-count purple">3</i></a>
+      <a class="nav-link" href="#" data-page="AI Business Assistant"><span>✳</span> AI Business Assistant <span class="ai-pill">AI</span></a>
+      <p class="nav-label">MANAGEMENT</p>
+      <a class="nav-link" href="#" data-page="Profit & Expenses"><span>₹</span> Profit & Expenses</a>
+      <a class="nav-link" href="#" data-page="Customers"><span>♙</span> Customers</a>
+      <a class="nav-link" href="#" data-page="Employees"><span>♧</span> Employees</a>
+      <a class="nav-link" href="#" data-page="Settings"><span>⚙</span> Settings</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="help-box"><div class="help-icon">✦</div><b>Need a hand?</b><p>Get help with your store operations.</p><button class="help-btn" data-page="AI Business Assistant">Ask FreshAI <span>↗</span></button></div><div class="user-mini"><div class="avatar">VK</div><div><b>Vamsi Krishna</b><small>Store Administrator</small></div><span class="dots">•••</span></div></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu">☰</button>
+      <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="pageCrumb">Dashboard</strong></div>
+      <div class="top-actions"><label class="global-search">⌕ <input id="globalSearch" placeholder="Search products, suppliers..."><kbd>⌘ K</kbd></label><button class="icon-btn notification-btn" id="notificationButton">♧<i></i></button><div class="top-user"><div class="avatar">VK</div><div><b>Vamsi Krishna</b><small>Administrator</small></div><span>⌄</span></div></div>
+    </header>
+    <section class="content">
+      <div class="welcome-row"><div><div class="eyebrow"><span class="live-dot"></span> TUESDAY, OCTOBER 20, 2026</div><h1 id="pageTitle">Good morning, Vamsi <span>✦</span></h1><p class="subtitle" id="pageSubtitle">Here's what's happening with your store today.</p></div><div class="welcome-actions"><button class="btn btn-light" id="exportButton">⇩ Export report</button><button class="btn btn-primary" data-page="POS Billing">＋ New sale</button></div></div>
+      <div class="page-view" id="dashboardPage">
+        <div class="metric-grid">
+          <article class="metric-card"><div class="metric-top"><span class="metric-label">Today's sales</span><span class="metric-icon blue">↗</span></div><div class="metric-value" id="salesMetric">₹25,840</div><div class="metric-foot"><span class="trend positive">↗ 12.8%</span><span>vs. yesterday</span><div class="sparkline blue-spark">▁▃▂▅▄▆▇</div></div></article>
+          <article class="metric-card"><div class="metric-top"><span class="metric-label">Completed bills</span><span class="metric-icon violet">▤</span></div><div class="metric-value" id="billsMetric">148</div><div class="metric-foot"><span class="trend positive">↗ 8.2%</span><span>vs. yesterday</span><div class="sparkline violet-spark">▂▃▂▄▅▄▇</div></div></article>
+          <article class="metric-card"><div class="metric-top"><span class="metric-label">Units sold</span><span class="metric-icon green">▣</span></div><div class="metric-value" id="unitsMetric">526 <small>units</small></div><div class="metric-foot"><span class="trend positive">↗ 10.4%</span><span>vs. yesterday</span><div class="sparkline green-spark">▁▂▄▃▅▆▇</div></div></article>
+          <article class="metric-card"><div class="metric-top"><span class="metric-label">Estimated gross profit</span><span class="metric-icon amber">₹</span></div><div class="metric-value" id="profitMetric">₹5,860</div><div class="metric-foot"><span class="trend positive">↗ 5.6%</span><span>vs. yesterday</span><div class="sparkline amber-spark">▁▃▂▄▅▃▆</div></div></article>
+        </div>
+        <div class="dashboard-grid">
+          <section class="panel sales-panel"><div class="panel-head"><div><h2>Sales overview</h2><p>Track your store's performance over time</p></div><div class="segmented" id="salesFilters"><button class="selected" data-range="Today">Today</button><button data-range="Last Week">Last week</button><button data-range="This Month">This month</button></div></div><div class="chart-summary"><div><small>Total sales</small><strong id="chartSales">₹25,840</strong></div><div><small>Gross profit</small><strong id="chartProfit">₹5,860</strong></div><div class="chart-legend"><span><i class="legend-blue"></i> Sales</span><span><i class="legend-green"></i> Profit</span></div></div><div class="chart-wrap"><canvas id="salesChart" aria-label="Sales overview chart"></canvas></div></section>
+          <section class="panel inventory-health"><div class="panel-head"><div><h2>Inventory health</h2><p>Current stock snapshot</p></div><button class="text-btn" data-page="Inventory / Stock">View stock ↗</button></div><div class="health-score"><div class="donut"><div><strong>82%</strong><small>Healthy</small></div></div><div class="health-legend"><div><i class="dot green-bg"></i><span>Healthy stock</span><b>248</b></div><div><i class="dot amber-bg"></i><span>Low stock</span><b>18</b></div><div><i class="dot red-bg"></i><span>Expiring soon</span><b>7</b></div><div><i class="dot gray-bg"></i><span>Out of stock</span><b>3</b></div></div></div><div class="health-footer"><span>Stock health is based on available inventory</span><span class="mini-link" data-page="Inventory / Stock">Details →</span></div></section>
+        </div>
+        <div class="lower-grid">
+          <section class="panel"><div class="panel-head"><div><h2>Top-selling products</h2><p>Your best performers today</p></div><button class="text-btn" data-page="Sales Reports">Full report ↗</button></div><div class="top-products" id="topProducts"></div></section>
+          <section class="panel"><div class="panel-head"><div><h2>Needs your attention</h2><p>Prioritized tasks for today</p></div><span class="badge badge-red">4 alerts</span></div><div class="attention-list"><button class="attention-item" data-page="Expiry Alerts"><span class="attention-icon red-bg">◷</span><span><b>Products nearing expiry</b><small>4 batches need review soon</small></span><span class="attention-arrow">→</span></button><button class="attention-item" data-page="Inventory / Stock"><span class="attention-icon amber-bg">↓</span><span><b>Stock running low</b><small>8 products below reorder level</small></span><span class="attention-arrow">→</span></button><button class="attention-item" data-page="Purchase Suggestions"><span class="attention-icon blue-bg">✧</span><span><b>Purchase list is ready</b><small>3 items recommended for restock</small></span><span class="attention-arrow">→</span></button></div></section>
+        </div>
+        <section class="panel table-panel"><div class="panel-head"><div><h2>Recent transactions</h2><p>Latest completed customer bills</p></div><button class="text-btn" data-page="Sales Reports">View all transactions ↗</button></div><div class="table-scroll"><table><thead><tr><th>Bill number</th><th>Time</th><th>Items</th><th>Payment</th><th>Amount</th><th>Status</th></tr></thead><tbody id="recentBills"></tbody></table></div></section>
+      </div>
+      <div class="page-view hidden" id="genericPage"></div>
+    </section>
+  </main>
+</div>
+<div class="toast-stack" id="toastStack"></div>
+<div class="modal-backdrop hidden" id="modalBackdrop"><div class="modal" id="modalContent"></div></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="static/app.js"></script>
+</body></html>
